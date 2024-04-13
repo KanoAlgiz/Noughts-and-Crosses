@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ewdgle4lp64y"]
+
+[ext_resource type="FontFile" uid="uid://dbqsbvimvlp3t" path="res://kyrandia.ttf" id="1_0seiv"]
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_0seiv")
+Label/colors/font_color = Color(0.407843, 0.407843, 0.407843, 1)
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_0seiv")

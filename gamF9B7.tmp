@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkda8ew3bjf6t"]
+
+[ext_resource type="FontFile" uid="uid://dbqsbvimvlp3t" path="res://kyrandia.ttf" id="1_6rlks"]
+[ext_resource type="Script" path="res://game.gd" id="1_baapc"]
+
+[sub_resource type="Theme" id="Theme_i5rt4"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_6rlks")
+
+[node name="Game" type="Node"]
+script = ExtResource("1_baapc")
+
+[node name="Intefrace" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Intefrace"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="Intefrace/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Cell0" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell1" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell2" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell3" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell4" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell5" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell6" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell7" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[node name="Cell8" type="Button" parent="Intefrace/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_i5rt4")
+text = "?"
+
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell0" to="." method="onCellClick" binds= [0]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell1" to="." method="onCellClick" binds= [1]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell2" to="." method="onCellClick" binds= [2]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell3" to="." method="onCellClick" binds= [3]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell4" to="." method="onCellClick" binds= [4]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell5" to="." method="onCellClick" binds= [5]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell6" to="." method="onCellClick" binds= [6]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell7" to="." method="onCellClick" binds= [7]]
+[connection signal="pressed" from="Intefrace/CenterContainer/Grid/Cell8" to="." method="onCellClick" binds= [8]]
