@@ -1,29 +1,25 @@
 extends Object
 class_name WinChecker
 
-func checkForGameEnd(board: Array2D) -> int:
+# X = 1, O = -1, NO_WINNER = 0
+func getWinnerForMove(board: Array2D, moveX: int, moveY: int) -> int:
 	var winner
 	
-	for y in 3:
-		winner = getRowWinner(board, y) / 3
-		if winner != 0:
-			return winner
+	if isEqual(board.getValue(moveX, 0), board.getValue(moveX, 1), board.getValue(moveX, 2)):
+		return board.getValue(moveX, 0)
+		
+	if isEqual(board.getValue(0, moveY), board.getValue(1, moveY), board.getValue(2, moveY)):
+		return board.getValue(0, moveY)
+		
+	if moveX == moveY:
+		if isEqual(board.getValue(0, 0), board.getValue(1, 1), board.getValue(2, 2)):
+			return board.getValue(1, 1)
 			
-	for x in 3:
-		winner = getColumnWinner(board, x) / 3
-		if winner != 0:
-			return winner
+	if moveX + moveY == 2:
+		if isEqual(board.getValue(0, 2), board.getValue(1, 1), board.getValue(2, 0)):
+			return board.getValue(1, 1)
 			
 	return 0
 	
-func getRowWinner(board: Array2D, lineNumber) -> int:
-	var winner: int
-	for x in 3:
-		winner = winner + board.getValue(x, lineNumber)
-	return winner
-	
-func getColumnWinner(board: Array2D, columnNumber):
-	var winner: int
-	for i in 3:
-		winner = winner + board.getValue(columnNumber, i)
-	return winner
+func isEqual(first: int, second: int, third: int) -> bool:
+	return first == second and second == third

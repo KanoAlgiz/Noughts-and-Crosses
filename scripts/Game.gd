@@ -10,24 +10,29 @@ var aiStrategy: AiStrategy
 var isGameOver = false
 
 func _ready():
-	aiStrategy = RandomStrategy.new()
+	aiStrategy = RandomCellStrategy.new()
 	interface.refresh(board)
 
 func onPlayerMove(x, y):
 	board.setValue(x, y, 1)
-	checkForGameEnd()
+	checkForGameEnd(x, y)
 	
 	if !isGameOver:
-		doComputerMove()
-		checkForGameEnd()
+		var selectedIndex: Dictionary = aiStrategy.selectCell(board)
+		board.setValue(selectedIndex["x"], selectedIndex["y"], -1)
+		checkForGameEnd(selectedIndex["x"], selectedIndex["y"])
 		
 	interface.refresh(board)
 		
-func checkForGameEnd():
-	if winChecker.checkForGameEnd(board) != 0:
-		interface.showWinText()
-		isGameOver = true
+func checkForGameEnd(moveX: int, moveY: int):
+	var winner =  winChecker.getWinnerForMove(board, moveX, moveY)
 	
-func doComputerMove():
-	var selectedIndex: Dictionary = aiStrategy.selectCell(board)
-	board.setValue(selectedIndex["x"], selectedIndex["y"], -1)
+	if winner == -1:
+		interface.showText("You Lose!")
+		isGameOver = true
+	elif winner == 1:
+		interface.showText("You Win!")
+		isGameOver = true
+	elif board.isAllFilled():
+		interface.showText("Tie!")
+		isGameOver = true

@@ -1,7 +1,7 @@
 extends AiStrategy
-class_name RandomStrategy
+class_name RandomCellStrategy
 
-func selectCell(board: Array2D):
+func selectCell(board: Array2D) -> Dictionary:
 	var isEmpty: bool = false
 	var x: int
 	var y: int

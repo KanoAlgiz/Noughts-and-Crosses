@@ -22,11 +22,12 @@ script = ExtResource("1_cruao")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_bottom = 45.0
 grow_horizontal = 2
 theme = ExtResource("3_7r7jh")
 text = "Игра!"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Interface"]
 layout_mode = 1

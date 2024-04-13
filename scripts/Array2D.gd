@@ -5,9 +5,9 @@ var data: Array[Variant] = []
 var xSize: int
 var ySize: int
 
-func _init(xSize: int, ySize: int):
-	self.xSize = xSize
-	self.ySize = ySize
+func _init(requestedXSize: int, requestedYSize: int):
+	xSize = requestedXSize
+	ySize = requestedYSize
 	data.resize(xSize * ySize)
 	data.fill(0)
 	
@@ -24,4 +24,9 @@ func forEach(function: Callable):
 	for x in xSize:
 		for y in ySize:
 			function.call(x, y, getValue(x, y))
-	
+			
+func isAllFilled() -> bool:
+	for item in data:
+		if item == 0: return false
+		
+	return true

@@ -23,8 +23,8 @@ func refreshButtonText(x, y, value):
 func onCellClick(x: int, y: int):
 	game.onPlayerMove(x, y)
 	
-func showWinText():
-	label.text = "Game Over!"
+func showText(text: String):
+	label.text = text
 	
 func convertCellValueToText(value: int) -> String:
 	var result: String
