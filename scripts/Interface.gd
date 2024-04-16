@@ -28,7 +28,6 @@ func showText(text: String):
 	
 func convertCellValueToText(value: int) -> String:
 	var result: String
-	
 	match value:
 		0:
 			result = ""

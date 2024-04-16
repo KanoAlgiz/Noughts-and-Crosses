@@ -51,24 +51,6 @@ theme = ExtResource("3_7r7jh")
 text = "?"
 script = ExtResource("4_mjl6g")
 
-[node name="Cell-0-1" type="Button" parent="Interface/CenterContainer/Grid"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = ExtResource("3_7r7jh")
-text = "?"
-script = ExtResource("4_mjl6g")
-y = 1
-
-[node name="Cell-0-2" type="Button" parent="Interface/CenterContainer/Grid"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = ExtResource("3_7r7jh")
-text = "?"
-script = ExtResource("4_mjl6g")
-y = 2
-
 [node name="Cell-1-0" type="Button" parent="Interface/CenterContainer/Grid"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
@@ -77,6 +59,24 @@ theme = ExtResource("3_7r7jh")
 text = "?"
 script = ExtResource("4_mjl6g")
 x = 1
+
+[node name="Cell-2-0" type="Button" parent="Interface/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
+text = "?"
+script = ExtResource("4_mjl6g")
+x = 2
+
+[node name="Cell-0-1" type="Button" parent="Interface/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
+text = "?"
+script = ExtResource("4_mjl6g")
+y = 1
 
 [node name="Cell-1-1" type="Button" parent="Interface/CenterContainer/Grid"]
 unique_name_in_owner = true
@@ -88,25 +88,6 @@ script = ExtResource("4_mjl6g")
 x = 1
 y = 1
 
-[node name="Cell-1-2" type="Button" parent="Interface/CenterContainer/Grid"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = ExtResource("3_7r7jh")
-text = "?"
-script = ExtResource("4_mjl6g")
-x = 1
-y = 2
-
-[node name="Cell-2-0" type="Button" parent="Interface/CenterContainer/Grid"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = ExtResource("3_7r7jh")
-text = "?"
-script = ExtResource("4_mjl6g")
-x = 2
-
 [node name="Cell-2-1" type="Button" parent="Interface/CenterContainer/Grid"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
@@ -116,6 +97,25 @@ text = "?"
 script = ExtResource("4_mjl6g")
 x = 2
 y = 1
+
+[node name="Cell-0-2" type="Button" parent="Interface/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
+text = "?"
+script = ExtResource("4_mjl6g")
+y = 2
+
+[node name="Cell-1-2" type="Button" parent="Interface/CenterContainer/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
+text = "?"
+script = ExtResource("4_mjl6g")
+x = 1
+y = 2
 
 [node name="Cell-2-2" type="Button" parent="Interface/CenterContainer/Grid"]
 unique_name_in_owner = true
@@ -128,11 +128,11 @@ x = 2
 y = 2
 
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-0" to="Interface/CenterContainer/Grid/Cell-0-0" method="_on_pressed"]
-[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-1" to="Interface/CenterContainer/Grid/Cell-0-1" method="_on_pressed"]
-[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-2" to="Interface/CenterContainer/Grid/Cell-0-2" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-0" to="Interface/CenterContainer/Grid/Cell-1-0" method="_on_pressed"]
-[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-1" to="Interface/CenterContainer/Grid/Cell-1-1" method="_on_pressed"]
-[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-2" to="Interface/CenterContainer/Grid/Cell-1-2" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-2-0" to="Interface/CenterContainer/Grid/Cell-2-0" method="_on_pressed"]
+[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-1" to="Interface/CenterContainer/Grid/Cell-0-1" method="_on_pressed"]
+[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-1" to="Interface/CenterContainer/Grid/Cell-1-1" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-2-1" to="Interface/CenterContainer/Grid/Cell-2-1" method="_on_pressed"]
+[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-2" to="Interface/CenterContainer/Grid/Cell-0-2" method="_on_pressed"]
+[connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-2" to="Interface/CenterContainer/Grid/Cell-1-2" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-2-2" to="Interface/CenterContainer/Grid/Cell-2-2" method="_on_pressed"]

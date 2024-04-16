@@ -30,3 +30,9 @@ func isAllFilled() -> bool:
 		if item == 0: return false
 		
 	return true
+	
+func getCopy() -> Array2D:
+	var copy = Array2D.new(xSize, ySize)
+	for i in data.size():
+		copy.data[i] = data[i]
+	return copy
