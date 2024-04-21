@@ -5,6 +5,7 @@
 [resource]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_0seiv")
+CheckButton/constants/outline_size = 0
 Label/colors/font_color = Color(0.407843, 0.407843, 0.407843, 1)
-Label/font_sizes/font_size = 20
+Label/font_sizes/font_size = 18
 Label/fonts/font = ExtResource("1_0seiv")

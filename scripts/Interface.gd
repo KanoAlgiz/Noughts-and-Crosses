@@ -2,7 +2,10 @@ extends Control
 class_name Interface
 
 @onready var game: Game = get_parent()
-@onready var label: Label = $Label
+@onready var statusLabel: Label = %StatusLabel
+@onready var scoreXLabel: Label = %YouScore
+@onready var scoreOLabel: Label = %FoeScore
+@onready var newGameButton: Button = %NewGameButton
 var buttons: Array2D = Array2D.new(3, 3)
 
 func _ready():
@@ -19,12 +22,26 @@ func refreshButtonText(x, y, value):
 	var button = buttons.getValue(x, y)
 	button.text = convertCellValueToText(value)
 	button.mouse_filter = 0 if value == 0 else 2
+	
+func refreshScore(x: int, o: int):
+	scoreXLabel.text = str(x)
+	scoreOLabel.text = str(o)
 
 func onCellClick(x: int, y: int):
 	game.onPlayerMove(x, y)
 	
 func showText(text: String):
-	label.text = text
+	statusLabel.text = text
+	
+func onDifficultyChange(isHardNow: bool):
+	game.setAiStrategy(isHardNow)
+	
+func onNewGameButtonClick():
+	newGameButton.visible = false
+	game.startNewGame()
+
+func showNewGameButton():
+	newGameButton.visible = true
 	
 func convertCellValueToText(value: int) -> String:
 	var result: String

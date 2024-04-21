@@ -18,14 +18,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cruao")
 
-[node name="Label" type="Label" parent="Interface"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 45.0
-grow_horizontal = 2
+[node name="Header" type="MarginContainer" parent="Interface"]
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 24.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/Header"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/Header/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="YouLabel" type="Label" parent="Interface/Header/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("3_7r7jh")
-text = "Игра!"
+text = "X Score:"
+
+[node name="YouScore" type="Label" parent="Interface/Header/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("3_7r7jh")
+text = "0"
+
+[node name="FoeLabel" type="Label" parent="Interface/Header/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_7r7jh")
+text = "O Score:"
+
+[node name="FoeScore" type="Label" parent="Interface/Header/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("3_7r7jh")
+text = "0"
+
+[node name="StatusLabel" type="Label" parent="Interface/Header/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -127,6 +164,50 @@ script = ExtResource("4_mjl6g")
 x = 2
 y = 2
 
+[node name="NewGameButton" type="Button" parent="Interface"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.5
+offset_top = -75.0
+offset_right = 67.5
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_7r7jh")
+theme_override_font_sizes/font_size = 15
+text = "Start New Game"
+
+[node name="Difficulty" type="HBoxContainer" parent="Interface"]
+custom_minimum_size = Vector2(0, 40.605)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_top = -40.605
+offset_right = 205.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DifficultyLabel" type="Label" parent="Interface/Difficulty"]
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
+theme_override_font_sizes/font_size = 16
+text = "Computer AI (stupid/clever):"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DifficultySwitch" type="CheckButton" parent="Interface/Difficulty"]
+layout_mode = 2
+theme = ExtResource("3_7r7jh")
+
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-0" to="Interface/CenterContainer/Grid/Cell-0-0" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-0" to="Interface/CenterContainer/Grid/Cell-1-0" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-2-0" to="Interface/CenterContainer/Grid/Cell-2-0" method="_on_pressed"]
@@ -136,3 +217,5 @@ y = 2
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-0-2" to="Interface/CenterContainer/Grid/Cell-0-2" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-1-2" to="Interface/CenterContainer/Grid/Cell-1-2" method="_on_pressed"]
 [connection signal="pressed" from="Interface/CenterContainer/Grid/Cell-2-2" to="Interface/CenterContainer/Grid/Cell-2-2" method="_on_pressed"]
+[connection signal="pressed" from="Interface/NewGameButton" to="Interface" method="onNewGameButtonClick"]
+[connection signal="toggled" from="Interface/Difficulty/DifficultySwitch" to="Interface" method="onDifficultyChange"]

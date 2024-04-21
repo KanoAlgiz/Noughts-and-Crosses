@@ -2,13 +2,11 @@ extends AiStrategy
 class_name MinMaxStrategy
 
 var checker: WinChecker = WinChecker.new()
-var actionNum = 0
 
 # best move for O is negative
 func selectCell(board: Array2D) -> Dictionary:
 	var bestScore = null
 	var moveScore
-	actionNum = 0
 	var bestMove: Dictionary = {"x": null, "y": null}
 	var boardCopy = board.getCopy();
 
@@ -26,8 +24,8 @@ func selectCell(board: Array2D) -> Dictionary:
 	return bestMove
 	
 func getMoveScore(board: Array2D, moveX: int, moveY: int, playerMark: int):	
-	actionNum += 1
-	if checker.isWinningMove(board, moveX, moveY, playerMark): return playerMark
+	if checker.isWinningMove(board, moveX, moveY, playerMark): 
+		return playerMark
 	
 	board.setValue(moveX, moveY, playerMark)
 	
