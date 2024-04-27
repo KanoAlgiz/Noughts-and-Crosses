@@ -5,7 +5,7 @@ var checker: WinChecker = WinChecker.new()
 
 # best move for O is negative
 func selectCell(board: Array2D) -> Dictionary:
-	var bestScore = null
+	var bestScore
 	var moveScore
 	var bestMove: Dictionary = {"x": null, "y": null}
 	var boardCopy = board.getCopy();
@@ -33,25 +33,22 @@ func getMoveScore(board: Array2D, moveX: int, moveY: int, playerMark: int):
 		board.setValue(moveX, moveY, 0)
 		return 0
 	
-	var score = null
+	var score
 	var moveScore
+	var nextMovingPlayer = -playerMark
 
 	for x in 3:
 		for y in 3:
 			if board.getValue(x, y) == 0:
-				moveScore = getMoveScore(board, x, y, -playerMark)
-				
-				if moveScore == playerMark:
+				moveScore = getMoveScore(board, x, y, nextMovingPlayer)
+				if moveScore == nextMovingPlayer:
 					board.setValue(moveX, moveY, 0)
 					return moveScore
-					
-				if score == null:
+				elif score == null:
 					score = moveScore
-					continue
-						
-				if playerMark == 1 && moveScore > score:
+				elif nextMovingPlayer == 1 && moveScore > score:
 					score = moveScore
-				elif playerMark == -1 && moveScore < score:
+				elif nextMovingPlayer == -1 && moveScore < score:
 					score = moveScore
 		
 	board.setValue(moveX, moveY, 0)
