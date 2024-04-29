@@ -7,6 +7,8 @@ class_name Interface
 @onready var scoreOLabel: Label = %FoeScore
 @onready var newGameButton: Button = %NewGameButton
 var buttons: Array2D = Array2D.new(3, 3)
+var XColor: Color = Color.TOMATO
+var OColor: Color = Color.SKY_BLUE
 
 func _ready():
 	var button: Button
@@ -20,8 +22,15 @@ func refresh(board: Array2D):
 			
 func refreshButtonText(x, y, value):
 	var button = buttons.getValue(x, y)
+	if value != 0:
+		button.mouse_filter = 2
+		var buttonColor = XColor if value == 1 else OColor
+		button.add_theme_color_override("font_color", buttonColor)
+		button.add_theme_color_override("font_focus_color", buttonColor)
+	else:
+		button.mouse_filter = 0
+
 	button.text = convertCellValueToText(value)
-	button.mouse_filter = 0 if value == 0 else 2
 	
 func refreshScore(x: int, o: int):
 	scoreXLabel.text = str(x)
